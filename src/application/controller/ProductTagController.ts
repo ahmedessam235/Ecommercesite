@@ -20,4 +20,20 @@ export class ProductTagController {
             next(e);
         }
     }
+    public async updateProductTag(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("update request done /productTag ");
+        } catch (e) {
+            next(e);
+        }
+    }
+    public async deleteProductTag(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("delete request done /productTag ");
+        } catch (e) {
+            next(e);
+        }
+    }
 }

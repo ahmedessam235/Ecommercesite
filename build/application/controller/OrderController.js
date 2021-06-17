@@ -33,6 +33,28 @@ class OrderController {
             }
         });
     }
+    updateOrder(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("update request done /order");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    deleteOrder(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("delete request done /order");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
 }
 exports.OrderController = OrderController;
 OrderController.instance = new OrderController();

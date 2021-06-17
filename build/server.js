@@ -11,7 +11,7 @@ const TagController_1 = require("./application/controller/TagController");
 const UserController_1 = require("./application/controller/UserController");
 const express = require('express');
 const app = express();
-//GET requests
+//GET requests "READ"
 app.get("/", GeneralController_1.GeneralController.instance.ping);
 app.get("/category", CategoryController_1.CategoryController.instance.getCategory);
 app.get("/order", OrderController_1.OrderController.instance.getOrder);
@@ -21,15 +21,33 @@ app.get("/producttag", ProductTagController_1.ProductTagController.instance.getP
 app.get("/subcategory", SubCategoryController_1.SubCategoryController.instance.getSubCategory);
 app.get("/tag", TagController_1.TagController.instance.getTag);
 app.get("/user", UserController_1.UserController.instance.getUser);
-//Post requests
-app.post("/setcategory", CategoryController_1.CategoryController.instance.setCategory);
-app.post("/setorder", OrderController_1.OrderController.instance.setOrder);
-app.post("/setorderitem", OrderItemController_1.OrderItemController.instance.setOrderItem);
-app.post("/setproduct", ProductController_1.ProductController.instance.setProduct);
-app.post("/setproducttag", ProductTagController_1.ProductTagController.instance.setProductTag);
-app.post("/setsubcategory", SubCategoryController_1.SubCategoryController.instance.setSubCategory);
-app.post("/settag", TagController_1.TagController.instance.setTag);
-app.post("/setuser", UserController_1.UserController.instance.setUser);
+//Post requests  "CREATE"
+app.post("/category", CategoryController_1.CategoryController.instance.setCategory);
+app.post("/order", OrderController_1.OrderController.instance.setOrder);
+app.post("/orderitem", OrderItemController_1.OrderItemController.instance.setOrderItem);
+app.post("/product", ProductController_1.ProductController.instance.setProduct);
+app.post("/producttag", ProductTagController_1.ProductTagController.instance.setProductTag);
+app.post("/subcategory", SubCategoryController_1.SubCategoryController.instance.setSubCategory);
+app.post("/tag", TagController_1.TagController.instance.setTag);
+app.post("/user", UserController_1.UserController.instance.setUser);
+//PUT requests "update"
+app.put("/category", CategoryController_1.CategoryController.instance.updateCategory);
+app.put("/order", OrderController_1.OrderController.instance.updateOrder);
+app.put("/orderitem", OrderItemController_1.OrderItemController.instance.updateOrderItem);
+app.put("/product", ProductController_1.ProductController.instance.updateProduct);
+app.put("/producttag", ProductTagController_1.ProductTagController.instance.updateProductTag);
+app.put("/subcategory", SubCategoryController_1.SubCategoryController.instance.updateSubCategory);
+app.put("/tag", TagController_1.TagController.instance.updateTag);
+app.put("/user", UserController_1.UserController.instance.updateUser);
+//DELETE requests "delete"
+app.delete("/category", CategoryController_1.CategoryController.instance.deleteCategory);
+app.delete("/order", OrderController_1.OrderController.instance.deleteOrder);
+app.delete("/orderitem", OrderItemController_1.OrderItemController.instance.deleteOrderItem);
+app.delete("/product", ProductController_1.ProductController.instance.deleteProduct);
+app.delete("/producttag", ProductTagController_1.ProductTagController.instance.deleteProductTag);
+app.delete("/subcategory", SubCategoryController_1.SubCategoryController.instance.deleteSubCategory);
+app.delete("/tag", TagController_1.TagController.instance.deleteTag);
+app.delete("/user", UserController_1.UserController.instance.deleteUser);
 app.listen(process.env.PORT || 3000, function () {
     console.log("Server started on port 3000");
 });

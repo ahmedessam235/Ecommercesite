@@ -33,6 +33,28 @@ class TagController {
             }
         });
     }
+    updateTag(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("update request done /tag ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    deleteTag(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("delete request done /tag ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
 }
 exports.TagController = TagController;
 TagController.instance = new TagController();

@@ -26,7 +26,27 @@ class ProductController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 console.log(req);
-                res.send("post request done /product ");
+                res.send(req.body);
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    updateProduct(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                res.send("update request for product");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    deleteProduct(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                res.send("delete product request");
             }
             catch (e) {
                 next(e);

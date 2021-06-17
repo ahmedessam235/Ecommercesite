@@ -19,4 +19,20 @@ export class SubCategoryController {
             next(e);
         }
     }
+    public async updateSubCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("update request done /subcategory ");
+        } catch (e) {
+            next(e);
+        }
+    }
+    public async deleteSubCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("delete request done /subcategory ");
+        } catch (e) {
+            next(e);
+        }
+    }
 }

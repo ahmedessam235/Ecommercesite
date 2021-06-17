@@ -33,6 +33,28 @@ class SubCategoryController {
             }
         });
     }
+    updateSubCategory(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("update request done /subcategory ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    deleteSubCategory(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("delete request done /subcategory ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
 }
 exports.SubCategoryController = SubCategoryController;
 SubCategoryController.instance = new SubCategoryController();

@@ -33,6 +33,28 @@ class CategoryController {
             }
         });
     }
+    updateCategory(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("update request done ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    deleteCategory(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("delete request done ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
 }
 exports.CategoryController = CategoryController;
 CategoryController.instance = new CategoryController();

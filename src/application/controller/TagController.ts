@@ -19,4 +19,20 @@ export class TagController {
             next(e);
         }
     }
+    public async updateTag(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("update request done /tag ");
+        } catch (e) {
+            next(e);
+        }
+    }
+    public async deleteTag(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("delete request done /tag ");
+        } catch (e) {
+            next(e);
+        }
+    }
 }

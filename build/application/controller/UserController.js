@@ -33,6 +33,28 @@ class UserController {
             }
         });
     }
+    updateUser(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("update request done /user ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    deleteUser(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("delete request done /user ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
 }
 exports.UserController = UserController;
 UserController.instance = new UserController();

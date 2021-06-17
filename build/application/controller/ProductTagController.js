@@ -33,6 +33,28 @@ class ProductTagController {
             }
         });
     }
+    updateProductTag(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("update request done /productTag ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
+    deleteProductTag(req, res, next) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                console.log(req);
+                res.send("delete request done /productTag ");
+            }
+            catch (e) {
+                next(e);
+            }
+        });
+    }
 }
 exports.ProductTagController = ProductTagController;
 ProductTagController.instance = new ProductTagController();

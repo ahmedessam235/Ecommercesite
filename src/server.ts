@@ -12,7 +12,7 @@ const express = require('express');
 const app = express();
 
 
-//GET requests
+//GET requests "READ"
 app.get("/",GeneralController.instance.ping);
 app.get("/category",CategoryController.instance.getCategory);
 app.get("/order",OrderController.instance.getOrder);
@@ -22,16 +22,33 @@ app.get("/producttag",ProductTagController.instance.getProductTag);
 app.get("/subcategory",SubCategoryController.instance.getSubCategory);
 app.get("/tag",TagController.instance.getTag);
 app.get("/user",UserController.instance.getUser);
-
-//Post requests
-app.post("/setcategory",CategoryController.instance.setCategory);
-app.post("/setorder",OrderController.instance.setOrder);
-app.post("/setorderitem",OrderItemController.instance.setOrderItem);
-app.post("/setproduct",ProductController.instance.setProduct);
-app.post("/setproducttag",ProductTagController.instance.setProductTag);
-app.post("/setsubcategory",SubCategoryController.instance.setSubCategory);
-app.post("/settag",TagController.instance.setTag);
-app.post("/setuser",UserController.instance.setUser);
+//Post requests  "CREATE"
+app.post("/category",CategoryController.instance.setCategory);
+app.post("/order",OrderController.instance.setOrder);
+app.post("/orderitem",OrderItemController.instance.setOrderItem);
+app.post("/product",ProductController.instance.setProduct);
+app.post("/producttag",ProductTagController.instance.setProductTag);
+app.post("/subcategory",SubCategoryController.instance.setSubCategory);
+app.post("/tag",TagController.instance.setTag);
+app.post("/user",UserController.instance.setUser);
+//PUT requests "update"
+app.put("/category",CategoryController.instance.updateCategory);
+app.put("/order",OrderController.instance.updateOrder);
+app.put("/orderitem",OrderItemController.instance.updateOrderItem);
+app.put("/product",ProductController.instance.updateProduct);
+app.put("/producttag",ProductTagController.instance.updateProductTag);
+app.put("/subcategory",SubCategoryController.instance.updateSubCategory);
+app.put("/tag",TagController.instance.updateTag);
+app.put("/user",UserController.instance.updateUser);
+//DELETE requests "delete"
+app.delete("/category",CategoryController.instance.deleteCategory);
+app.delete("/order",OrderController.instance.deleteOrder);
+app.delete("/orderitem",OrderItemController.instance.deleteOrderItem);
+app.delete("/product",ProductController.instance.deleteProduct);
+app.delete("/producttag",ProductTagController.instance.deleteProductTag);
+app.delete("/subcategory",SubCategoryController.instance.deleteSubCategory);
+app.delete("/tag",TagController.instance.deleteTag);
+app.delete("/user",UserController.instance.deleteUser);
 
 app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");

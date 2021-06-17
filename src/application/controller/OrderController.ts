@@ -19,4 +19,20 @@ export class OrderController {
             next(e);
         }
     }
+    public async updateOrder(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("update request done /order");
+        } catch (e) {
+            next(e);
+        }
+    }
+    public async deleteOrder(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("delete request done /order");
+        } catch (e) {
+            next(e);
+        }
+    }
 }

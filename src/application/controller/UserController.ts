@@ -19,4 +19,20 @@ export class UserController {
             next(e);
         }
     }
+    public async updateUser(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("update request done /user ");
+        } catch (e) {
+            next(e);
+        }
+    }
+    public async deleteUser(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("delete request done /user ");
+        } catch (e) {
+            next(e);
+        }
+    }
 }

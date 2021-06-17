@@ -20,4 +20,20 @@ export class CategoryController {
             next(e);
         }
     }
+    public async updateCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("update request done ");
+        } catch (e) {
+            next(e);
+        }
+    }
+    public async deleteCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            console.log(req);
+            res.send("delete request done ");
+        } catch (e) {
+            next(e);
+        }
+    }
 }

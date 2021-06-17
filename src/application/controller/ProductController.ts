@@ -19,4 +19,20 @@ export class ProductController {
             next(e);
         }
     }
+    public async updateProduct(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            
+            res.send("update request for product");
+        } catch (e) {
+            next(e);
+        }
+    }
+    public async deleteProduct(req: Request, res: Response, next: NextFunction): Promise<void> {
+        try {
+            
+            res.send("delete product request");
+        } catch (e) {
+            next(e);
+        }
+    }
 }
