@@ -1,4 +1,5 @@
 import { NextFunction,Request,Response } from "express";
+import { OrdersRepo } from "../../../src/storage/repos/OrdersRepo";
 
 export class OrderController {
     public static instance: OrderController = new OrderController();
@@ -6,7 +7,8 @@ export class OrderController {
     public async getOrder(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             
-            res.send("order consists of orderitems");
+            let result = await OrdersRepo.instance.getOrders();          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }

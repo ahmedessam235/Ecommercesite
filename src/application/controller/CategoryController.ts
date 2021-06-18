@@ -1,12 +1,13 @@
 import { NextFunction,Request,Response } from "express";
+import { CategoriesRepo } from "../../../src/storage/repos/categoriesrepo";
 
 export class CategoryController {
     public static instance: CategoryController = new CategoryController();
     private constructor() { }
     public async getCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            
-            res.send("list of categories are : shirts,pants,socks,accessories and bags");
+            let result = await CategoriesRepo.instance.getCategories();          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }
@@ -14,24 +15,32 @@ export class CategoryController {
 
     public async setCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            console.log(req);
-            res.send("post request done ");
+            let name:string;
+            name = req.body.name;
+            let result = await CategoriesRepo.instance.setCategory(name);          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }
     }
     public async updateCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            console.log(req);
-            res.send("update request done ");
+            let name:string;
+            let id:number;
+            name = req.body.name;
+            id = req.body.id
+            let result = await CategoriesRepo.instance.updateCategory(id,name);          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }
     }
     public async deleteCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
-        try {
-            console.log(req);
-            res.send("delete request done ");
+        try {  
+            let id:number;
+            id = req.body.id
+            let result = await CategoriesRepo.instance.deleteCategory(id);          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }

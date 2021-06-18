@@ -8,9 +8,12 @@ import { ProductTagController } from "./application/controller/ProductTagControl
 import { SubCategoryController } from "./application/controller/SubCategoryController";
 import { TagController } from "./application/controller/TagController";
 import { UserController } from "./application/controller/UserController";
+import { Database } from "./storage/database";
+
 const express = require('express');
 const app = express();
-
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 
 //GET requests "READ"
 app.get("/",GeneralController.instance.ping);
@@ -50,6 +53,8 @@ app.delete("/subcategory",SubCategoryController.instance.deleteSubCategory);
 app.delete("/tag",TagController.instance.deleteTag);
 app.delete("/user",UserController.instance.deleteUser);
 
-app.listen(process.env.PORT || 3000, function() {
+Database.instance.init().then(function(){
+  app.listen(process.env.PORT || 3000, function() {
     console.log("Server started on port 3000");
   });
+});
