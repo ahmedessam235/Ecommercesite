@@ -11,7 +11,7 @@ import { Products } from "./Products";
 @Entity("tags", { schema: "public" })
 export class Tags {
   @PrimaryGeneratedColumn({ type: "bigint", name: "tagID" })
-  tagId: string;
+  tagId: number;
 
   @Column("character varying", { name: "name", length: 255 })
   name: string;

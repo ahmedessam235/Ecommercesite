@@ -1,4 +1,5 @@
 import { NextFunction,Request,Response } from "express";
+import { TagsRepo } from "../../../src/storage/repos/TagsRepo";
 
 export class TagController {
     public static instance: TagController = new TagController();
@@ -6,31 +7,40 @@ export class TagController {
     public async getTag(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
             
-            res.send("get tag like : sportswear, best sellers last pieces");
+            let result = await TagsRepo.instance.getTags();          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }
     }
     public async setTag(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            console.log(req);
-            res.send("post request done /tag ");
+            let name:string;
+            name = req.body.name;
+            let result = await TagsRepo.instance.setTag(name);          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }
     }
     public async updateTag(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            console.log(req);
-            res.send("update request done /tag ");
+            let name:string;
+            let id:number;
+            name = req.body.name;
+            id = req.body.id
+            let result = await TagsRepo.instance.updateTag(id,name);          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }
     }
     public async deleteTag(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            console.log(req);
-            res.send("delete request done /tag ");
+            let id:number;
+            id = req.body.id
+            let result = await TagsRepo.instance.deleteTag(id);          
+            res.send(JSON.stringify(result));
         } catch (e) {
             next(e);
         }
