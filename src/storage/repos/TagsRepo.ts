@@ -11,7 +11,7 @@ interface ITagsRepo{
 }
 export  class TagsRepo implements ITagsRepo {
     public static instance: TagsRepo = new TagsRepo();
-    private CategoriesRepo() { };
+    private TagsRepo() { };
 
   async  getTags(): Promise<Tags[]> {
        let result:Tags[];

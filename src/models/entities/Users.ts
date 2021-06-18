@@ -14,7 +14,7 @@ import { Tokens } from "./Tokens";
 @Entity("users", { schema: "public" })
 export class Users {
   @PrimaryGeneratedColumn({ type: "bigint", name: "userid" })
-  userid: string;
+  userid: number;
 
   @Column("character varying", { name: "user_email", length: 255 })
   userEmail: string;
