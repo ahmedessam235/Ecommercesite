@@ -17,6 +17,9 @@ export class Logins {
   @Column("character varying", { name: "password", length: 255 })
   password: string;
 
+  @Column("bigint",{name:"userID"})
+  userId:number;
+
   @ManyToOne(() => Users, (users) => users.logins)
   @JoinColumn([{ name: "userID", referencedColumnName: "userid" }])
   user: Users;

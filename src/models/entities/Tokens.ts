@@ -17,8 +17,8 @@ export class Tokens {
   @Column("character varying", { name: "token", length: 255 })
   token: string;
 
-  @Column("bigint", { primary: true, name: "userID" })
-  userId: string;
+  @Column("bigint", { name: "userID" })
+  userId: number;
 
   @OneToOne(() => Users, (users) => users.tokens)
   @JoinColumn([{ name: "userID", referencedColumnName: "userid" }])

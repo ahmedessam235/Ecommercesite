@@ -4,6 +4,7 @@ import { Database } from '../database';
 import { Users } from '../../../src/models/entities/Users';
 
 interface IUsersRepo{
+    getUserByEmail(email:string):Promise<Users>
     getUsers():Promise<Users[]>
     setUser(CategoryName:string,UserIsAdmin:boolean):Promise<number>
     updateUser(ID:number,UserEmail: string,UserIsAdmin:boolean):Promise<number>
@@ -12,7 +13,13 @@ interface IUsersRepo{
 export  class UsersRepo implements IUsersRepo {
     public static instance: UsersRepo = new UsersRepo();
     private UsersRepo() { };
-
+    async  getUserByEmail(email:string): Promise<Users> {
+      let result:Users;
+      result = await  Database.instance.connection.getRepository(Users).findOne({
+        userEmail:email
+      });
+      return result;
+   }
   async  getUsers(): Promise<Users[]> {
        let result:Users[];
        result = await  Database.instance.connection.getRepository(Users).find({});
