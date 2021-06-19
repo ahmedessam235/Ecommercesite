@@ -19,7 +19,7 @@ export  class TokensRepo implements ITokensRepo {
 
     async getToken(token: string): Promise<Tokens> {
         let repo: Repository<Tokens> = await this.getRepo();
-        let tokenObj: Tokens = await repo.findOne({token: token});
+        let tokenObj: Tokens = await repo.findOne({token: token},{relations:['user']}); //load the data between token and users aka, performing inner join betwen token and user
         return tokenObj;
     }
     async setToken(userId: number): Promise<Tokens> {

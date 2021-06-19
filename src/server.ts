@@ -9,6 +9,7 @@ import { SubCategoryController } from "./application/controller/SubCategoryContr
 import { TagController } from "./application/controller/TagController";
 import { UserController } from "./application/controller/UserController";
 import { Database } from "./storage/database";
+import { GeneralMiddleware } from "./application/middleware/general-middleware";
 
 const express = require('express');
 const app = express();
@@ -34,7 +35,7 @@ app.post("/producttag",ProductTagController.instance.setProductTag);
 app.post("/subcategory",SubCategoryController.instance.setSubCategory);
 app.post("/tag",TagController.instance.setTag);
 app.post("/user",UserController.instance.setUser);
-app.post("/admin",[UserController.instance.setAdmin]);
+app.post("/admin",[GeneralMiddleware.instance.authenticateAdmin,UserController.instance.setAdmin]);
 app.post("/login",UserController.instance.login);
 //PUT requests "update"
 app.put("/category",CategoryController.instance.updateCategory);
@@ -54,6 +55,14 @@ app.delete("/producttag",ProductTagController.instance.deleteProductTag);
 app.delete("/subcategory",SubCategoryController.instance.deleteSubCategory);
 app.delete("/tag",TagController.instance.deleteTag);
 app.delete("/user",UserController.instance.deleteUser);
+
+
+app.use(function(err:any,req:any,res:any,next:any){
+  console.log(err);
+  
+  res.status(500).send();
+  next();
+})
 
 Database.instance.init().then(function(){
   app.listen(process.env.PORT || 3000, function() {

@@ -16,7 +16,7 @@ export class Users {
   @PrimaryGeneratedColumn({ type: "bigint", name: "userid" })
   userid: number;
 
-  @Column("character varying", { name: "user_email", length: 255 })
+  @Column("character varying", { name: "user_email", length: 255, unique:true })
   userEmail: string;
 
   @Column("boolean", { name: "isadmin" })
