@@ -33,6 +33,16 @@ export class UserController {
             next(e);
         }
     }
+    public async getUserByToken(req: Request, res: Response, next: NextFunction): Promise < void > {
+        try {
+            let token:any = req.headers['token'];
+            let tokenObj:Tokens = await TokensRepo.instance.getToken(token);
+            let result:Users = tokenObj.user;
+            res.send(JSON.stringify(result));
+        } catch (e) {
+            next(e);
+        }
+    }
     public async checkUser(req: Request, res: Response, next: NextFunction): Promise < void > {
         try {
             let email: string;
@@ -97,7 +107,6 @@ export class UserController {
             let userObj: Users = await UsersRepo.instance.getUserByEmail(email);
             if (UsersRepo === null) {
                 throw new Error("Email not found");
-                res.send("email not found")
             }
 
             //2- Send user id to database to get the password.

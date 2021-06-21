@@ -28,7 +28,7 @@ app.get("/product",ProductController.instance.getProduct);
 app.get("/producttag",ProductTagController.instance.getProductTag);
 app.get("/subcategory",SubCategoryController.instance.getSubCategory);
 app.get("/tag",TagController.instance.getTag);
-app.get("/user",UserController.instance.getUsers);
+app.get("/user",UserController.instance.getUserByToken);
 //Post requests  "CREATE"
 app.post("/category",CategoryController.instance.setCategory);
 app.post("/order",OrderController.instance.setOrder);

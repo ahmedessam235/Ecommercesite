@@ -9,7 +9,6 @@ interface IUsersRepo{
     setUser(CategoryName:string,UserIsAdmin:boolean):Promise<number>
     updateUser(ID:number,UserEmail: string,UserIsAdmin:boolean):Promise<number>
     deleteUser(ID:number):Promise<number>
-   
 }
 export  class UsersRepo implements IUsersRepo {
     public static instance: UsersRepo = new UsersRepo();
