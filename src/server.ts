@@ -13,7 +13,10 @@ import { GeneralMiddleware } from "./application/middleware/general-middleware";
 
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const bodyParser = require('body-parser');
+
+app.use(cors({ origin: true }));
 app.use(bodyParser.json());
 
 //GET requests "READ"
@@ -25,7 +28,7 @@ app.get("/product",ProductController.instance.getProduct);
 app.get("/producttag",ProductTagController.instance.getProductTag);
 app.get("/subcategory",SubCategoryController.instance.getSubCategory);
 app.get("/tag",TagController.instance.getTag);
-app.get("/user",UserController.instance.getUser);
+app.get("/user",UserController.instance.getUsers);
 //Post requests  "CREATE"
 app.post("/category",CategoryController.instance.setCategory);
 app.post("/order",OrderController.instance.setOrder);
@@ -35,6 +38,7 @@ app.post("/producttag",ProductTagController.instance.setProductTag);
 app.post("/subcategory",SubCategoryController.instance.setSubCategory);
 app.post("/tag",TagController.instance.setTag);
 app.post("/user",UserController.instance.setUser);
+app.post("/checkuser",UserController.instance.checkUser);
 app.post("/admin",[GeneralMiddleware.instance.authenticateAdmin,UserController.instance.setAdmin]);
 app.post("/login",UserController.instance.login);
 //PUT requests "update"
@@ -65,7 +69,7 @@ app.use(function(err:any,req:any,res:any,next:any){
 })
 
 Database.instance.init().then(function(){
-  app.listen(process.env.PORT || 3000, function() {
-    console.log("Server started on port 3000");
+  app.listen(process.env.PORT || 5000, function() {
+    console.log("Server started on port 5000");
   });
 });
