@@ -4,9 +4,9 @@ import { CategoriesRepo } from "../../../src/storage/repos/categoriesrepo";
 export class CategoryController {
     public static instance: CategoryController = new CategoryController();
     private constructor() { }
-    public async getCategory(req: Request, res: Response, next: NextFunction): Promise<void> {
+    public async getCategories(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            let result = await CategoriesRepo.instance.getCategories();          
+            let result = await CategoriesRepo.instance.getCategories();
             res.send(JSON.stringify(result));
         } catch (e) {
             next(e);

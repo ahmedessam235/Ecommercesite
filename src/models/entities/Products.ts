@@ -28,6 +28,9 @@ export class Products {
   @OneToMany(() => Orderitems, (orderitems) => orderitems.product)
   orderitems: Orderitems[];
 
+  @Column("bigint",{name:"subcategoryID"})
+  subcategoryID: number;
+
   @ManyToOne(() => Subcategories, (subcategories) => subcategories.products)
   @JoinColumn([
     { name: "subcategoryID", referencedColumnName: "subcategoryId" },

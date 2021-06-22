@@ -15,10 +15,13 @@ import { Categories } from "./Categories";
 @Entity("subcategories", { schema: "public" })
 export class Subcategories {
   @PrimaryGeneratedColumn({ type: "bigint", name: "subcategoryID" })
-  subcategoryId: string;
+  subcategoryId: number;
 
   @Column("character varying", { name: "name", unique: true, length: 255 })
   name: string;
+
+  @Column("bigint",{name:"categoryID"})
+  categoryID:number;
 
   @OneToMany(() => Products, (products) => products.subcategory)
   products: Products[];

@@ -21,12 +21,12 @@ app.use(bodyParser.json());
 
 //GET requests "READ"
 app.get("/",GeneralController.instance.ping);
-app.get("/category",CategoryController.instance.getCategory);
+app.get("/category",CategoryController.instance.getCategories);
 app.get("/order",OrderController.instance.getOrder);
 app.get("/orderitem",OrderItemController.instance.getOrderItem);
-app.get("/product",ProductController.instance.getProduct);
+app.get("/product/:subCategoryId",ProductController.instance.getProduct);
 app.get("/producttag",ProductTagController.instance.getProductTag);
-app.get("/subcategory",SubCategoryController.instance.getSubCategory);
+app.get("/subcategory/:categoryId",SubCategoryController.instance.getSubCategory);
 app.get("/tag",TagController.instance.getTag);
 app.get("/user",UserController.instance.getUserByToken);
 //Post requests  "CREATE"

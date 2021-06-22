@@ -1,12 +1,15 @@
 import { NextFunction,Request,Response } from "express";
+import { Products } from "../../../src/models/entities/Products";
+import { ProductsRepo } from "../../../src/storage/repos/ProductsRepo";
 
 export class ProductController {
     public static instance: ProductController = new ProductController();
     private constructor() { }
     public async getProduct(req: Request, res: Response, next: NextFunction): Promise<void> {
         try {
-            
-            res.send("product can be any fashion stuff");
+            let subCategoryId:any = req.params.subCategoryId;
+            let products:Products[] = await ProductsRepo.instance.getProducts(subCategoryId);
+            res.send(JSON.stringify(products));
         } catch (e) {
             next(e);
         }
