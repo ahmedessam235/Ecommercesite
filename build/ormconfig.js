@@ -13,7 +13,7 @@ class ORMConfigurations {
             username: "vuukygambxkupz",
             password: "5e322bed9df50b099066ab9270d3dc1b21feb49f8b67955b35cc75a34135a206",
             synchronize: true,
-            host: "127.0.0.1",
+            host: "ec2-34-193-101-0.compute-1.amazonaws.com",
             port: 5432,
             migrationsRun: false,
             entities: [
