@@ -41,6 +41,8 @@ Endpoints implemented :
 Implementation notes :
 
 	1 - product images required URL to show the item "online link for the image address"
+	2 - to add products,subcategoires or categories the only way is to update the local  database in the development mode only using pgadmin (Postgresql DB admin)
+
 	
 unimplemented features:
 
@@ -52,3 +54,23 @@ unimplemented features:
 6 - CART and order features, the only possible cart data is the number of items the user have added to the cart and saved in the browser
 7 - no search mechanisim was used.
 
+ To use the API :
+ - perfrom the required installation : 
+	 1 -  Clone repo from the following link : https://github.com/ahmedessam235/Ecommercesite.git
+	 2 - install postgresql from : https://www.postgresql.org/download/
+	 3 - install node from : https://nodejs.org/en/download/
+	 4 - install npm from : https://www.npmjs.com/get-npm
+ 
+ - inside the path Ecommercesite run npm start
+ 
+-  app will run on local host : 5000
+
+/********************* this step is solely for backend test usin postman,   note you can update backend with postman and then launch the front end and the admin will be saved ****/
+
+- for the first time users please use the super admin token : add header (admin-token) with value of q6REPcm4ukCBx6FZYQWEHJ!@G$U@!G$!UNRQN!and add any email or password,
+  sign up and then sign in :
+					- send POST /admin with email and password and the super user token.
+					- admin now is created.
+					- launch the front end and log in .
+
+- for app usage please check the documentation for the frontend "user/admin UI" in the README file : https://github.com/ahmedessam235/EcommerceFrontend
