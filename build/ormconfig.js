@@ -9,11 +9,11 @@ class ORMConfigurations {
         return {
             name: 'default',
             type: 'postgres',
-            database: "d5q941mrl0vgac",
-            username: "vuukygambxkupz",
-            password: "5e322bed9df50b099066ab9270d3dc1b21feb49f8b67955b35cc75a34135a206",
-            synchronize: true,
-            host: "ec2-34-193-101-0.compute-1.amazonaws.com",
+            database: "ecommerce",
+            username: "ahmed_essam",
+            password: "ahmed_essam@2021",
+            synchronize: false,
+            host: "212.1.214.238",
             port: 5432,
             migrationsRun: false,
             entities: [
