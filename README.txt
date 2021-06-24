@@ -55,6 +55,7 @@ unimplemented features:
 7 - no search mechanisim was used.
 
  To use the API :
+ *Note* : to login as admin use the folowing credentials email: ahmed@domain.com password:123456
  - perfrom the required installation : 
 	 1 -  Clone repo from the following link : https://github.com/ahmedessam235/Ecommercesite.git
 	 2 - install postgresql from : https://www.postgresql.org/download/
