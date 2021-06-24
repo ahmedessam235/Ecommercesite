@@ -30,6 +30,9 @@ export class Products {
 
   @Column("bigint",{name:"subcategoryID"})
   subcategoryID: number;
+  
+  @Column("character varying", { name: "image_url", length: 255 })
+  imageURL:string;
 
   @ManyToOne(() => Subcategories, (subcategories) => subcategories.products)
   @JoinColumn([
