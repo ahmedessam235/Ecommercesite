@@ -38,7 +38,6 @@ app.post("/producttag",ProductTagController.instance.setProductTag);
 app.post("/subcategory",SubCategoryController.instance.setSubCategory);
 app.post("/tag",TagController.instance.setTag);
 app.post("/user",UserController.instance.setUser);
-app.post("/checkuser",UserController.instance.checkUser);
 app.post("/admin",[GeneralMiddleware.instance.authenticateAdmin,UserController.instance.setAdmin]);
 app.post("/login",UserController.instance.login);
 //PUT requests "update"
