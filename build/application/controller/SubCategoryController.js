@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SubCategoryController = void 0;
-const SubCategoriesRepo_1 = require("../../../src/storage/repos/SubCategoriesRepo");
+const SubCategoriesRepo_1 = require("../../storage/repos/SubCategoriesRepo");
 class SubCategoryController {
     constructor() { }
     getSubCategory(req, res, next) {

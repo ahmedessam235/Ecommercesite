@@ -1,7 +1,7 @@
 import {Categories} from '../../models/entities/Categories';
 import { DeleteResult, Repository, UpdateResult } from "typeorm";
 import { Database } from '../database';
-import { Orderitems } from '../../../src/models/entities/Orderitems';
+import { Orderitems } from '../../models/entities/Orderitems';
 
 interface IOrderItemsRepo{
     getOrders():Promise<Orderitems[]>

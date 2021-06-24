@@ -1,5 +1,5 @@
 import { NextFunction,Request,Response } from "express";
-import { TagsRepo } from "../../../src/storage/repos/TagsRepo";
+import { TagsRepo } from "../../storage/repos/TagsRepo";
 
 export class TagController {
     public static instance: TagController = new TagController();

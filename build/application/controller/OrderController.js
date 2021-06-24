@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderController = void 0;
-const OrdersRepo_1 = require("../../../src/storage/repos/OrdersRepo");
+const OrdersRepo_1 = require("../../storage/repos/OrdersRepo");
 class OrderController {
     constructor() { }
     getOrder(req, res, next) {

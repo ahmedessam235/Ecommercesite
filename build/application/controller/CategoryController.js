@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CategoryController = void 0;
-const categoriesrepo_1 = require("../../../src/storage/repos/categoriesrepo");
+const categoriesrepo_1 = require("../../storage/repos/categoriesrepo");
 class CategoryController {
     constructor() { }
     getCategories(req, res, next) {

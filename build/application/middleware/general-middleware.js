@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneralMiddleware = void 0;
-const TokensRepo_1 = require("../../../src/storage/repos/TokensRepo");
+const TokensRepo_1 = require("../../storage/repos/TokensRepo");
 class GeneralMiddleware {
     GeneralMiddleware() { }
     ;

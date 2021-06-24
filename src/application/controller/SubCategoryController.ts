@@ -1,6 +1,6 @@
 import { NextFunction,Request,Response } from "express";
-import { Subcategories } from "../../../src/models/entities/Subcategories";
-import { SubcategoriesRepo } from "../../../src/storage/repos/SubCategoriesRepo";
+import { Subcategories } from "../../models/entities/Subcategories";
+import { SubcategoriesRepo } from "../../storage/repos/SubCategoriesRepo";
 
 export class SubCategoryController {
     public static instance: SubCategoryController = new SubCategoryController();

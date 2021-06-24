@@ -1,7 +1,7 @@
 import {Tokens} from '../../models/entities/Tokens';
 import { Repository } from "typeorm";
 import { Database } from '../database';
-import { TokenGenerator } from '../../../src/helpers/token-generator';
+import { TokenGenerator } from '../../helpers/token-generator';
 
 interface ITokensRepo{
     //1- Valid token (Exists in DB) >> token

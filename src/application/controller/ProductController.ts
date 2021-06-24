@@ -1,6 +1,6 @@
 import { NextFunction,Request,Response } from "express";
-import { Products } from "../../../src/models/entities/Products";
-import { ProductsRepo } from "../../../src/storage/repos/ProductsRepo";
+import { Products } from "../../models/entities/Products";
+import { ProductsRepo } from "../../storage/repos/ProductsRepo";
 
 export class ProductController {
     public static instance: ProductController = new ProductController();

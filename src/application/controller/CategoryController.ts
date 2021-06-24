@@ -1,5 +1,5 @@
 import { NextFunction,Request,Response } from "express";
-import { CategoriesRepo } from "../../../src/storage/repos/categoriesrepo";
+import { CategoriesRepo } from "../../storage/repos/categoriesrepo";
 
 export class CategoryController {
     public static instance: CategoryController = new CategoryController();

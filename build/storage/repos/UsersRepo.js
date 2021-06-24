@@ -11,7 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsersRepo = void 0;
 const database_1 = require("../database");
-const Users_1 = require("../../../src/models/entities/Users");
+const Users_1 = require("../../models/entities/Users");
 class UsersRepo {
     UsersRepo() { }
     ;

@@ -1,5 +1,5 @@
 import { NextFunction,Request,Response } from "express";
-import { OrdersRepo } from "../../../src/storage/repos/OrdersRepo";
+import { OrdersRepo } from "../../storage/repos/OrdersRepo";
 
 export class OrderController {
     public static instance: OrderController = new OrderController();

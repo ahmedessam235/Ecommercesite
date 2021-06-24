@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.TokensRepo = void 0;
 const Tokens_1 = require("../../models/entities/Tokens");
 const database_1 = require("../database");
-const token_generator_1 = require("../../../src/helpers/token-generator");
+const token_generator_1 = require("../../helpers/token-generator");
 class TokensRepo {
     TokensRepo() { }
     ;

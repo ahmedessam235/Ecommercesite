@@ -1,7 +1,7 @@
 import {Categories} from '../../models/entities/Categories';
 import { DeleteResult, Repository, UpdateResult } from "typeorm";
 import { Database } from '../database';
-import { Tags } from '../../../src/models/entities/Tags';
+import { Tags } from '../../models/entities/Tags';
 
 interface ITagsRepo{
     getTags():Promise<Tags[]>

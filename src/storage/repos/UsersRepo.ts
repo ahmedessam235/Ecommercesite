@@ -1,7 +1,7 @@
 import {Categories} from '../../models/entities/Categories';
 import { DeleteResult, Repository, UpdateResult } from "typeorm";
 import { Database } from '../database';
-import { Users } from '../../../src/models/entities/Users';
+import { Users } from '../../models/entities/Users';
 
 interface IUsersRepo{
     getUserByEmail(email:string):Promise<Users>

@@ -8,19 +8,19 @@ import {
 } from "../../storage/repos/TokensRepo";
 import {
     LoginsRepo
-} from "../../../src/storage/repos/LoginsRepo";
+} from "../../storage/repos/LoginsRepo";
 import {
     UsersRepo
-} from "../../../src/storage/repos/UsersRepo";
+} from "../../storage/repos/UsersRepo";
 import {
     Users
-} from "../../../src/models/entities/Users";
+} from "../../models/entities/Users";
 import {
     PasswordValidator
 } from "../../helpers/password-validator";
 import {
     Tokens
-} from "../../../src/models/entities/Tokens";
+} from "../../models/entities/Tokens";
 
 export class UserController {
     public static instance: UserController = new UserController();

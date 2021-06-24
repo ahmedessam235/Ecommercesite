@@ -11,8 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const TokensRepo_1 = require("../../storage/repos/TokensRepo");
-const LoginsRepo_1 = require("../../../src/storage/repos/LoginsRepo");
-const UsersRepo_1 = require("../../../src/storage/repos/UsersRepo");
+const LoginsRepo_1 = require("../../storage/repos/LoginsRepo");
+const UsersRepo_1 = require("../../storage/repos/UsersRepo");
 const password_validator_1 = require("../../helpers/password-validator");
 class UserController {
     constructor() { }

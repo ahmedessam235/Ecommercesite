@@ -1,7 +1,7 @@
 import {Request,NextFunction,Response} from "express";
 import { IncomingHttpHeaders } from "http";
-import { Tokens } from "../../../src/models/entities/Tokens";
-import { TokensRepo } from "../../../src/storage/repos/TokensRepo";
+import { Tokens } from "../../models/entities/Tokens";
+import { TokensRepo } from "../../storage/repos/TokensRepo";
 
 
 export class GeneralMiddleware{

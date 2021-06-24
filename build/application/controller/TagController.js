@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TagController = void 0;
-const TagsRepo_1 = require("../../../src/storage/repos/TagsRepo");
+const TagsRepo_1 = require("../../storage/repos/TagsRepo");
 class TagController {
     constructor() { }
     getTag(req, res, next) {
